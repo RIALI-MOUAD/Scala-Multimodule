@@ -236,6 +236,37 @@ root
 ```
 
 ### Sub-Projects :
+#### 0- GetDataFrame :
+##### General structure:
+```sh
+.:
+GetDataFrame.iml  src
+
+./src:
+main
+
+./src/main:
+scala
+
+./src/main/scala:
+DataFrameFromFile.scala
+```
+##### Objects :
+As you can see above, I only use one object which resoponsable for generating Datasets that we will use in the 3 other sub-projects the thing that I have just explained it in  [***From File to Dataset***]()
+> DataFrameFromFile.scala :
+```scala
+import org.apache.spark.sql.{SparkSession}
+
+object DataFrameFromFile {
+  val sc: SparkSession = SparkSession.builder()
+    .master("local[1]")
+    .appName("SparkII")
+    .getOrCreate()
+  def getCustomer: org.apache.spark.sql.DataFrame ={...}
+  def getProduct: org.apache.spark.sql.DataFrame ={...}
+  def getSales: org.apache.spark.sql.DataFrame ={...}
+  def getRefund: org.apache.spark.sql.DataFrame ={...}
+```
 
 #### 1- Sales Distribution :
 
@@ -244,9 +275,26 @@ This sub-project is meant to evaluate the amount and quantity for each product n
 ##### Employed Datasets :
 - Product.txt
 - Sales.txt
+##### General structure :
+```sh
+.:
+SalesDistribution.iml  src
+
+./src:
+main
+
+./src/main:
+scala
+
+./src/main/scala:
+SalesDistribution.scala
+
+```
 ##### Objects :
 ###### DataFrameFromFile.scala :
-The reason behind calling this object is to generate the Dataframes that we would employ later to serve the project role as we are going to see in the main project object.
+The reason behind calling this object is to generate the Datasets that we would employ later to serve the project role as we are going to see in the main project object.
+> The reason why we can call it even from an other sub-project is that we had defined before in the build.sbt file that **SalesDistribution.(...) dependsOn(GetDataFrame) 
+
 ###### SalesDistribution.scala : 
 The main object of this sub-project which looks like this :
 ```scala
@@ -326,6 +374,20 @@ only showing top 20 rows
 This sub-project is meant to calculate total amount of sales happened in *2013*.
 ##### Employed Datasets :
 - Sales.txt
+##### General Structure :
+```sh
+.:
+Sales2013.iml  src
+
+./src:
+main
+
+./src/main:
+scala
+
+./src/main/scala:
+Sales2013.scala
+```
 ##### Objects :
 ###### DataFrameFromFile.scala :
 The reason behind calling this object is to generate the Dataframes that we'll employ later to serve the project role as we are going to see in the main project object.
@@ -417,6 +479,20 @@ This sub-project is meant to calculate total amount of sales happened in *2013* 
 ##### Employed Datasets :
 - Sales.txt
 - Refund.txt
+##### General structure :
+```sh
+.:
+Sales2013MinusRefund.iml  src
+
+./src:
+main
+
+./src/main:
+scala
+
+./src/main/scala:
+Scala2013MinusRefund.scala
+```
 ##### Objects :
 ###### DataFrameFromFile.scala :
 The reason behind calling this object is to generate the Dataframes that we'll employ later to serve the project role as we are going to see in the main project object.
@@ -514,6 +590,20 @@ This sub-project is meant to calculate total number of products for each custome
 ##### Employed Datasets :
 - Sales.txt
 - Customer.txt
+##### General structure :
+```sh
+.:
+src  UserProducts.iml
+
+./src:
+main
+
+./src/main:
+scala
+
+./src/main/scala:
+UserProducts.scala
+```
 ##### Objects :
 ###### DataFrameFromFile.scala :
 The reason behind calling this object is to generate the Dataframes that we'll employ later to serve the project role as we are going to see in the main project object.
