@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/GetDataFrame/GetDataFrame.iml" filepath="$PROJECT_DIR$/GetDataFrame/GetDataFrame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sales2013/Sales2013.iml" filepath="$PROJECT_DIR$/Sales2013/Sales2013.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Sales2013MinusRefund/Sales2013MinusRefund.iml" filepath="$PROJECT_DIR$/Sales2013MinusRefund/Sales2013MinusRefund.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SalesDistribution/SalesDistribution.iml" filepath="$PROJECT_DIR$/SalesDistribution/SalesDistribution.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SparkII.iml" filepath="$PROJECT_DIR$/.idea/modules/SparkII.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/SparkII-build.iml" filepath="$PROJECT_DIR$/.idea/modules/SparkII-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/UserProducts/UserProducts.iml" filepath="$PROJECT_DIR$/UserProducts/UserProducts.iml" />
+    </modules>
+  </component>
+</project>
